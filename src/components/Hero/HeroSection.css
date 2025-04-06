@@ -1,0 +1,152 @@
+/* Hero Section Container */
+.hero-section {
+  width: 100%;
+  height: 600px;
+  margin: 2px auto;
+  position: relative;
+  /* border-radius: 10px; */
+  overflow: hidden;
+}
+
+/* Slider Container */
+.hero-slider {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Individual Slide Images */
+.hero-slide {
+  position: absolute;
+  width: 100%;
+  height: 880px;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transform: translateX(0);
+  transition:
+    opacity 1s ease-in-out,
+    transform 1s ease-in-out;
+}
+
+/* Active Slide */
+.hero-active {
+  opacity: 1;
+  transform: translateX(0);
+  z-index: 2;
+}
+
+/* Exiting Slide */
+.hero-exiting {
+  opacity: 0;
+  transform: translateX(-100%);
+  z-index: 1;
+}
+
+/* Hero Content Section */
+.hero-content {
+  position: absolute;
+  top: 50%; /* Vertically centered */
+  left: 5%; /* Position towards the left */
+  transform: translateY(-50%);
+  color: white;
+  z-index: 3; /* Ensure it stays above the slides */
+  width: 90%;
+  max-width: 592px;
+  height: auto;
+  text-align: left;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* Edukit Nigeria Text */
+.hero-subtitle {
+  font-family: "Signika", serif;
+  font-size: 1.875rem;
+  font-weight: 500;
+  line-height: 38px;
+  letter-spacing: 1.5px;
+  margin: 0 0 10px;
+  color: #b4c8ff;
+}
+
+/* Main Title */
+.hero-title {
+  font-size: 3.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  margin: 10px 0;
+  line-height: 72px;
+  font-family: "Signika", serif;
+  font-weight: 600;
+  text-align: left;
+  color: #fff;
+}
+
+/* Small Subtext */
+.hero-small-text {
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin: 10px 0 20px;
+  font-family: "Open Sans", serif;
+  line-height: 30px;
+  text-align: left;
+  width: 90%;
+  color: #fdfdfd;
+}
+
+/* Buttons Section */
+.hero-buttons {
+  display: flex;
+  gap: 17px;
+}
+
+.hero-buttons button {
+  width: 200px;
+  height: 60px;
+  /* padding: 10px 20px; */
+  border: none;
+  border-radius: 8px;
+  font-size: 1.125em;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.hero-donation {
+  background-color: #004aad;
+  color: white;
+  font-family: Open Sans;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 28px;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+
+.hero-donation:hover {
+  background-color: #535862;
+}
+
+.hero-request {
+  background-color: #fff;
+  color: #004aad;
+  font-family: Open Sans;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 28px;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+
+.hero-request:hover {
+  background-color: #535862;
+  color: #fff;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+}

@@ -1,0 +1,361 @@
+/* General Styles */
+* {
+  font-family: "Open Sans", serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Navbar Container */
+.Navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #ffffff;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px 20px;
+}
+
+/* Logo */
+.NavLogo {
+  margin-right: 30px;
+}
+
+.NavLogo img {
+  height: 50px;
+}
+
+/* Menu Icon for Small Screens */
+.MenuIcon {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Navigation Items */
+.NavItems {
+  display: flex;
+  align-items: center;
+}
+
+.NavItems ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.NavItems ul li {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.NavItems a {
+  text-decoration: none;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  color: #535862;
+}
+
+.NavItems a:hover,
+.NavItems button:hover {
+  color: #004aad;
+}
+
+/* Dropdown Button */
+.NavItems button {
+  background: none;
+  border: none;
+  font-family: "Open Sans", serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  text-align: left;
+  cursor: pointer;
+  padding: 5px 10px;
+  color: #535862;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  width: 264px;
+  height: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  gap: 8px;
+  position: absolute;
+  top: 46px;
+  left: -30px;
+  background-color: #ffffff;
+  list-style: none;
+  z-index: 30;
+  flex-direction: column;
+  border-radius: 12px;
+  text-align: left; /* Align text to the start */
+}
+
+.dml {
+  width: 230px;
+  height: 24px;
+  font-family: Open Sans;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.dropdown button i {
+  vertical-align: middle;
+  margin-left: 5px;
+}
+
+/* Display dropdown menu on hover or when open */
+.dropdown:hover .dropdown-menu,
+.dropdown-menu.open {
+  display: flex;
+}
+
+/* Dropdown Menu Items */
+.dropdown-menu li {
+  padding: 10px 10px;
+  text-align: left; /* Align text to the start */
+}
+
+.dropdown-menu li a {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: #535862;
+  display: block;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #f1f1f1;
+  color: #004aad;
+  width: 230px;
+  height: 48px;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+/* Submenu (Blog submenu inside About Us) */
+.submenu {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  z-index: 15;
+  flex-direction: column;
+  text-align: left; /* Align text to the start */
+}
+
+/* Show submenu when active */
+.dropdown-menu li:hover > .submenu,
+.submenu-active {
+  display: flex;
+}
+
+/* Submenu Items */
+.submenu li {
+  padding: 10px 15px;
+  white-space: nowrap;
+  text-align: left; /* Align text to the start */
+}
+
+.submenu li a {
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: #535862;
+  display: block;
+}
+
+.submenu li a:hover {
+  background-color: #f1f1f1;
+  color: #004aad;
+}
+
+/* Adjust margins for a clean layout */
+.NavItems ul {
+  text-align: center;
+}
+
+.NavItems li {
+  margin: 0 15px;
+  text-align: left;
+  position: relative;
+}
+
+/* Buttons for Sign Up and Log In */
+.NavButtons {
+  display: flex;
+  margin-left: 20px;
+  gap: 10px;
+}
+
+.NavButtons button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+}
+
+.NavButtons .sign-up {
+  background-color: #004aad;
+  color: #ffffff;
+}
+
+.sign-up:hover {
+  background-color: #f1f1f1ff;
+  color: #004aad;
+}
+
+.NavButtons.log-in {
+  background-color: transparent;
+  color: #535862;
+  border: 2px solid #535862;
+  border-radius: 5px;
+}
+
+.log-in:hover {
+  background-color: #535862;
+  color: #ffffff;
+  border-color: #535862;
+}
+
+/* RESPONSIVE NAVBAR */
+@media screen and (max-width: 768px) {
+  .NavItems {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 250px;
+    height: 100vh;
+    background-color: #ffffff;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 60px;
+    transition: right 0.3s ease-in-out;
+  }
+
+  .NavItems.active {
+    right: 0;
+  }
+
+  .NavItems ul {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .MenuIcon {
+    display: block;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10000;
+    position: fixed;
+    right: 20px;
+    top: 20px;
+  }
+
+  .NavItems.active .MenuIcon {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    color: #535862;
+  }
+
+  .NavButtons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  .NavItems {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 250px;
+    height: 100vh;
+    background-color: #ffffff;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 60px;
+    transition: right 0.3s ease-in-out;
+    z-index: 1000;
+    overflow-y: auto;
+    max-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  .NavItems.active {
+    right: 0;
+    overflow-y: auto;
+  }
+
+  .NavItems ul {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .MenuIcon {
+    display: block;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10000;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+
+  .NavButtons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+    align-items: center;
+    overflow-y: auto;
+  }
+}
+
+@media screen and (min-width: 1250px) and (max-width: 1300px) {
+  .NavItems ul {
+    gap: 0px;
+  }
+  .NavItems ul li {
+    font-size: 0.9rem;
+    min-width: 20px;
+  }
+}
+
+@media screen and (min-width: 1301px) and (max-width: 1350px) {
+  .NavItems ul {
+    gap: 0px;
+  }
+}

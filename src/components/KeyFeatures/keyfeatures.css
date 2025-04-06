@@ -1,0 +1,297 @@
+@import url("https://fonts.googleapis.com/css2?family=Signika:wght@300..700&display=swap");
+
+.key-features {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 4rem;
+  background-color: #f3f7fa;
+  max-width: 1500px;
+  margin: 0 auto;
+  height: 984px;
+}
+
+.key-features-left {
+  flex: 1;
+}
+
+.key-features-title {
+  font-family: "Signika" serif;
+  font-weight: 600;
+  font-size: 1.875rem;
+  line-height: 38px;
+  letter-spacing: 0%;
+  color: #004aad;
+}
+
+.key-features-head {
+  font-size: 3.75rem;
+  letter-spacing: 0.02em;
+  margin: 5px 0;
+  font-family: "Signika", serif;
+  font-weight: 500;
+  text-align: left;
+  color: #252b37;
+  width: 80%;
+}
+
+.key-features-description {
+  font-family: "Open" Sans;
+  font-weight: 500;
+  font-size: 1.125rem;
+  line-height: 28px;
+  letter-spacing: 0%;
+  color: #535862;
+  width: 80%;
+}
+
+.key-features-cta-button {
+  font-family: "Open Sans", serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 28px;
+  text-align: left;
+  padding: 0.75rem 1.5rem;
+  background-color: #004aad;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 24px;
+}
+
+.key-features-cta-button:hover {
+  background-color: #535862;
+}
+
+.key-features-right {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.key-features-card {
+  background-color: white;
+  width: 280px;
+  height: 372px;
+  padding: 24px 16px;
+  border-radius: 16px;
+  border: 0.5px solid #a4a7ae;
+  text-align: left;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.key-features-card:hover {
+  transform: translateY(-5px);
+}
+
+.key-features-image {
+  width: 64px;
+  height: 64px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.key-features-heading {
+  font-family: "Signika", serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  line-height: 32px;
+  text-align: left;
+  margin-bottom: 0.5rem;
+  color: #252b37;
+  width: 80%;
+}
+
+.key-features-text {
+  font-family: "Open Sans", serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+  color: #535862;
+  width: 93%;
+}
+
+.key-features-text span {
+  font-family: Open Sans;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: 0%;
+  color: #004aad;
+}
+
+/* Media Queries */
+
+/* ✅ Tablets (1024px and below) */
+@media screen and (max-width: 1024px) {
+  .key-features {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: auto;
+    padding: 2rem 1rem;
+  }
+
+  .key-features-left {
+    margin-right: 0;
+    text-align: center;
+  }
+
+  .key-features-head {
+    font-size: 48px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .description {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .key-features-cta-button {
+    margin: 1rem auto;
+  }
+
+  .key-features-right {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .key-features-card {
+    width: 100%;
+    max-width: 280px;
+    padding: 20px;
+  }
+}
+
+@media screen and (max-width: 884px) {
+  .key-features-description {
+    font-size: 25px;
+    line-height: 32px;
+    width: 700px;
+    height: 130px;
+    margin-top: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+
+  .key-features-cta-button {
+    margin-top: -10px;
+    margin-bottom: 25px;
+  }
+}
+
+/* ✅ Large Phones (768px and below) */
+@media screen and (max-width: 768px) {
+  .key-features {
+    padding: 1.5rem;
+  }
+
+  .key-features-title {
+    font-size: 40px;
+    text-align: center;
+  }
+
+  .key-features-head {
+    font-size: 50px;
+    text-align: center;
+  }
+
+  .key-features-description {
+    font-size: 30px;
+    line-height: 32px;
+    width: 700px;
+    height: 130px;
+    margin-top: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+
+  .key-features-right {
+    grid-template-columns: 1fr;
+  }
+
+  .key-features-card {
+    max-width: 100%;
+    text-align: center;
+    align-items: center;
+  }
+
+  .key-features-heading {
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .key-features-text {
+    font-size: 25px;
+    text-align: center;
+    line-height: 30px;
+  }
+
+  .key-features-cta-button {
+    font-size: 20px;
+    padding: 0.5rem 1rem;
+    margin-top: 20px;
+  }
+}
+
+/* ✅ Small Phones (480px and below) */
+@media screen and (max-width: 480px) {
+  .key-features-head {
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .key-features-title {
+    font-size: 25px;
+    text-align: center;
+  }
+
+  .key-features-description {
+    font-size: 20px;
+    width: 350px;
+    height: 150px;
+    margin-top: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+
+  .key-features {
+    padding: 1rem;
+  }
+
+  .key-features-right {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .key-features-card {
+    margin-top: 20px;
+    padding: 15px;
+    align-items: center;
+  }
+
+  .key-features-heading {
+    font-size: 20px;
+    text-align: center;
+  }
+  .key-features-text {
+    font-size: 15px;
+    text-align: center;
+  }
+
+  .key-features-cta-button {
+    font-size: 16px;
+    padding: 0.5rem 1rem;
+    margin-top: 20px;
+  }
+}
