@@ -1,7 +1,6 @@
 import React from "react";
 import Home from "./Pages/Home";
 import OurProfile from "./Pages/OurProfile";
-import Signup from "./components/SignUp/Signup.jsx";
 import {
   BrowserRouter as Router,
   Route,
@@ -10,7 +9,7 @@ import {
 } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import Student from "./components/Student/Student.jsx";
-
+import Signup from "./components/SignUp/Signup.jsx";
 import NewUser from "./components/NewUser/NewUser.jsx";
 import School from "./components/School/School.jsx";
 import Login from "./components/Login/Login.jsx"; // Import the Login component
