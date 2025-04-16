@@ -456,6 +456,7 @@ font-weight: 600;
 }
 
 .content{
+  text-align: left;
   padding: 0 15px 15px 15px;
   line-height: 24px;
   font-size: 16px;
@@ -496,13 +497,15 @@ color: #181D27;
 .box-exp{
   width: 520px;
   padding: 20px 0;
-  font-size: 18px;
   line-height: 28px;
   font-family: "Open Sans";
   font-weight: 400;
   margin-bottom: 18px;
   color: #535862;
-  text-align: justify;
+}
+.box-exp p{
+  text-align: left;
+  font-size: 18px;
 }
 .btns{
   width: 474px;

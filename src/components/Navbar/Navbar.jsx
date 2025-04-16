@@ -166,7 +166,9 @@ const Navbar = () => {
             {/* Contact Us */}
 
             <li>
-              <a href="contact">Contact Us</a>
+              <Link to="/ContactUsPage">
+                <a href="contact">Contact Us</a>
+              </Link>
             </li>
           </ul>
 

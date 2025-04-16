@@ -1,0 +1,450 @@
+.cu-header {
+  background-image: url("/src/assets/StoryBackdrop.png");
+  width: 100%;
+  height: 4.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 75px;
+  color: white;
+  font-family: "Signika", sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.cu-hero {
+  display: flex;
+  width: 100%;
+  height: 922px;
+}
+
+.cu-hero-left {
+  width: 704px;
+  height: 922px;
+  flex-shrink: 0;
+}
+
+.cu-hero-left img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cu-hero-right {
+  flex: 1;
+  background-color: #f9f9f9;
+  position: relative;
+}
+
+.cu-form-wrapper {
+  position: absolute;
+  height: 922px;
+  margin-left: 72px;
+  margin-top: 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.cu-form-wrapper h2 {
+  width: 70%;
+  height: 120px;
+  font-family: Signika;
+  font-weight: 600;
+  font-size: 48px;
+  letter-spacing: 2%;
+  color: #181d27;
+}
+
+.cu-form-wrapper span {
+  width: 70%;
+  height: 60px;
+  font-family: Signika;
+  font-weight: 600;
+  font-size: 48px;
+  color: #004aad;
+  margin-top: -35px;
+}
+
+.cu-form-wrapper p {
+  font-family: Open Sans;
+  font-weight: 400;
+  font-size: 20px;
+  color: #535862;
+  margin-top: -25px;
+}
+
+.cu-form {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  gap: 32px;
+}
+
+.cu-form label {
+  font-family: Open Sans;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  color: #414651;
+}
+
+.cu-form input,
+.cu-form textarea {
+  width: 90%;
+  height: 48px;
+  padding-top: 12px;
+  padding-right: 16px;
+  padding-bottom: 12px;
+  padding-left: 16px;
+  gap: 8px;
+  border-radius: 8px;
+  border-width: 1px;
+  margin-top: -25px;
+}
+
+.cu-form input ::placeholder,
+.cu-form textarea ::placeholder {
+  font-family: Open Sans;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.cu-form textarea {
+  height: 120px;
+  resize: vertical;
+  margin-top: 20px;
+}
+
+.cu-form button {
+  padding: 16px;
+  background-color: #004aad;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 90%;
+  margin-top: 70px;
+}
+
+.cu-form button:hover {
+  background-color: #ffffff;
+  color: #004aad;
+  border: 1px solid #004aad;
+}
+
+.cu-contact-cards {
+  margin: 60px auto;
+  width: 100%;
+  text-align: center;
+  font-family: "Signika", sans-serif;
+  background-color: #fafafa;
+}
+
+.cu-contact-cards-text {
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+
+.cu-contact-heading {
+  position: relative;
+  margin-top: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120px; /* same as h2 height */
+  margin-bottom: 32px; /* space between heading and cards */
+}
+
+.cu-contact-cards h2 {
+  width: 600px;
+  height: 120px;
+  font-family: Signika;
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 60px;
+  letter-spacing: 2%;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.cu-highlight {
+  color: #004aad;
+}
+
+.cu-card-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 32px;
+  flex-wrap: nowrap; /* Prevents wrapping */
+  overflow-x: auto; /* Optional: allows horizontal scroll on smaller screens */
+  padding-bottom: 16px;
+  margin-bottom: 120px;
+}
+
+.cu-card-container::-webkit-scrollbar {
+  display: none;
+}
+
+.cu-card {
+  width: 280px;
+  height: 248px;
+  padding: 32px 16px;
+  gap: 16px;
+  border-radius: 16px;
+  border: 1px solid #d5d7da;
+  box-shadow: 0px 4px 6px -1px #12121714;
+  background-color: white;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.cu-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0px 8px 12px -1px #1212171a;
+}
+
+.cu-card h3 {
+  margin-top: 16px;
+  font-family: Signika;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #004aad;
+  margin-top: -10px;
+}
+
+.cu-card p {
+  width: 248px;
+  height: 64px;
+  margin-top: -8px;
+  font-family: Open Sans;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  color: #535862;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.cu-card span {
+  width: 260px;
+  height: 64px;
+  margin-top: 8px;
+  font-family: Open Sans;
+  font-weight: 400;
+  font-size: 20px;
+  color: #535862;
+  text-align: center;
+  vertical-align: middle;
+  margin-top: -10px;
+}
+
+/* Join Us Section Styles */
+.cu-join-card {
+  width: 1216px;
+  height: 532px;
+  padding: 120px 32px;
+  border-radius: 48px;
+  background: #004aad;
+  margin: 64px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  font-family: "Signika", sans-serif;
+  gap: 32px;
+  box-sizing: border-box;
+}
+
+.cu-join-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+.cu-join-heading {
+  width: 625px;
+  height: 108px;
+  font-family: Signika;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 54px;
+  letter-spacing: 2%;
+  color: #fdfdfd;
+}
+
+.cu-get-involved-btn {
+  background-color: white;
+  color: #004aad;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 24px 12px 48px;
+  font-family: Open Sans;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  width: fit-content;
+  margin-top: 32px;
+}
+
+.cu-get-involved-btn:hover {
+  background-color: #535862;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+}
+
+.cu-circle-group {
+  position: absolute;
+  left: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cu-outer-circle {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #004aad;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.cu-inner-circle {
+  width: 8px;
+  height: 8px;
+  background-color: #004aad;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.cu-join-image {
+  flex: 1;
+  text-align: right;
+}
+
+.cu-join-image img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.cu-faq-container {
+  width: 100%;
+  background: linear-gradient(to bottom, #f3f7fa 0%, #ffffff 100%);
+}
+
+.cu-faq-section {
+  padding: 60px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.cu-faq-title {
+  width: 100%;
+  height: 72px;
+  font-family: Signika;
+  font-weight: 600;
+  font-size: 50px;
+  line-height: 72px;
+  letter-spacing: 2%;
+  text-align: center;
+  margin: 100px auto 16px auto; /* Horizontally center */
+  color: #181d27;
+}
+
+.cu-faq-subtitle {
+  width: 730px;
+  height: 78px;
+  text-align: center;
+  font-family: Open Sans;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 26px;
+  color: #535862;
+  text-align: center;
+  vertical-align: bottom;
+  margin-top: -15px;
+  margin-bottom: 100px;
+  line-height: 1.6;
+}
+
+.cu-faq-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
+}
+
+.cu-faq-accordion details {
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid #e1e1e1;
+  padding: 16px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cu-faq-accordion summary {
+  position: relative;
+  padding-right: 25px;
+  cursor: pointer;
+  font-family: Open Sans;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: 0%;
+  outline: none;
+  list-style: none;
+  color: #1e1e1e;
+}
+
+.cu-faq-accordion details[open] {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.cu-faq-accordion details p {
+  margin-top: 10px;
+  line-height: 1.5;
+  font-family: Open Sans;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: #535862;
+}
+
+.cu-faq-accordion summary::after {
+  content: "+";
+  position: absolute;
+  right: 0;
+  font-size: 18px;
+  font-weight: bold;
+  transition: transform 0.2s ease;
+}
+
+/* When details is open, change the icon to minus */
+.cu-faq-accordion details[open] summary::after {
+  content: "–";
+}
