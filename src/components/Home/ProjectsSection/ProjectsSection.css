@@ -162,88 +162,96 @@ body {
   background-color: #004aad;
 }
 
-@media (max-width: 428px) {
-  .projects-main {
-    margin-top: 750px;
-  }
-
-  .project-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .projects-cards {
+@media (max-width: 425px) {
+  .project-container.three-cards .projects-cards {
     width: 100%;
-    margin: 20px;
+    max-width: 350px;
+    margin: 10px;
   }
 
-  .projects-box {
-    margin-top: -220px;
+  .project-container.three-cards .projects-cards:nth-child(1),
+  .project-container.three-cards .projects-cards:nth-child(2),
+  .project-container.three-cards .projects-cards:nth-child(3) {
+    width: 100%;
+    max-width: 350px;
+    margin: 10px;
   }
+}
 
-  .projects-box h3 {
-    font-size: 1.875rem;
-    line-height: 2.375rem;
-  }
-
-  .project-title {
-    font-weight: 300;
-    width: 300px;
-    line-height: 25px;
-    margin-bottom: 10px;
-  }
-
-  .project-des {
-    font-size: 9px;
-    font-weight: 200;
-    width: 300px;
+@media (max-width: 375px) {
+  .project-container.three-cards .projects-cards {
+    width: 100%;
+    max-width: 320px;
+    margin: 10px;
   }
 }
 
 @media (max-width: 768px) {
-  .projects-main {
-    padding-top: 200px;
+  .projects-box {
+    margin-top: 20px;
   }
-
   .project-container {
-    flex-direction: column;
-    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
   }
 
   .projects-cards {
-    width: 80%;
-    margin: 20px;
+    width: 90%;
+    max-width: 350px;
+    margin: 10px;
+    height: auto;
   }
 
-  .projects-box h3 {
-    font-size: 1.875rem;
-    line-height: 2.375rem;
+  .project-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
   }
+
+  .project-info {
+    width: 100%;
+    padding: 16px;
+    box-sizing: border-box;
+  }
+
   .project-title {
-    font-size: 25px;
-    font-weight: 400;
-    width: 300px;
-    line-height: 25px;
-    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: 500;
+    width: 100%;
+    line-height: 1.4;
+    margin-bottom: 8px;
   }
 
   .project-des {
-    margin-top: 15px;
-    font-size: 18px;
-    font-weight: 200;
-    width: 300px;
-    line-height: 25px;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.6;
+    width: 100%;
   }
 
   .more {
-    font-size: 15px;
-    font-weight: 200;
+    font-size: 14px;
+    font-weight: 300;
   }
-}
 
-@media (max-width: 800px) {
-  .projects-main {
-    margin-top: 500px;
+  /* Pyramid layout for exactly 3 cards */
+  .project-container.three-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .project-container.three-cards .projects-cards:nth-child(1),
+  .project-container.three-cards .projects-cards:nth-child(2) {
+    width: 45%;
+    min-width: 280px;
+  }
+
+  .project-container.three-cards .projects-cards:nth-child(3) {
+    width: 90%;
+    margin-top: 20px;
   }
 }
 
@@ -287,8 +295,71 @@ body {
   }
 }
 
-@media (width: 1280px) {
+@media (max-width: 1024px) {
   .projects-main {
-    margin-top: -100px;
+    margin-top: 400px;
+  }
+
+  .project-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .projects-cards {
+    width: 90%;
+    max-width: 350px;
+    margin: 10px;
+    height: auto;
+  }
+
+  .project-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .project-info {
+    width: 100%;
+    padding: 16px;
+    box-sizing: border-box;
+  }
+
+  .project-title {
+    font-size: 20px;
+    font-weight: 500;
+    width: 100%;
+    line-height: 1.4;
+    margin-bottom: 8px;
+  }
+
+  .project-des {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.6;
+    width: 100%;
+  }
+
+  .more {
+    font-size: 14px;
+    font-weight: 300;
+  }
+
+  .project-container.three-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .project-container.three-cards .projects-cards:nth-child(1),
+  .project-container.three-cards .projects-cards:nth-child(2) {
+    width: 45%;
+    min-width: 280px;
+  }
+
+  .project-container.three-cards .projects-cards:nth-child(3) {
+    width: 90%;
+    margin-top: 20px;
   }
 }

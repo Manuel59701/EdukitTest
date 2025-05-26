@@ -99,7 +99,7 @@ const TestimonialSection = () => {
       <h3 className="small-title">TESTIMONIALS</h3>
       <h1 className="big-title">VOICES OF IMPACT</h1>
 
-      <div className="card-container">
+      <div className="card-container three-cards">
         {displayedTestimonials.map((testimonial) => (
           <div key={testimonial.id} className="testimonial-card">
             <div className="author-info">

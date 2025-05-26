@@ -448,3 +448,280 @@
 .cu-faq-accordion details[open] summary::after {
   content: "–";
 }
+
+@media screen and (max-width: 430px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .cu-hero {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .cu-hero-left {
+    display: none; /* Hide the image section */
+  }
+
+  .cu-hero-right {
+    width: 100%;
+    height: auto;
+    padding: 0;
+  }
+
+  .cu-form-wrapper {
+    position: static;
+    margin: 24px 16px;
+    height: auto;
+    padding: 0;
+    gap: 24px;
+  }
+
+  .cu-form-wrapper h2,
+  .cu-form-wrapper span,
+  .cu-form-wrapper p {
+    width: 100%;
+    font-size: 32px;
+  }
+
+  .cu-form-wrapper span {
+    font-size: 32px;
+    margin-top: -20px;
+  }
+
+  .cu-form-wrapper p {
+    font-size: 16px;
+    margin-top: -15px;
+  }
+
+  .cu-form {
+    width: 100%;
+    gap: 24px;
+    height: auto;
+  }
+
+  .cu-form input,
+  .cu-form textarea {
+    width: 100%;
+  }
+
+  .cu-form textarea {
+    height: 100px;
+  }
+
+  .cu-form button {
+    width: 70%;
+    margin: 32px auto 0 auto;
+    display: block;
+  }
+
+  .cu-contact-cards h2 {
+    width: 100%;
+    font-size: 32px;
+    height: auto;
+    line-height: 1.4;
+  }
+
+  .cu-card-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding: 0 16px;
+    margin-bottom: 60px;
+  }
+
+  .cu-card {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .cu-join-card {
+    flex-direction: column;
+    padding: 40px 20px;
+    height: auto;
+    width: 80%;
+    border-radius: 24px;
+    gap: 24px;
+    margin: 32px auto;
+  }
+
+  .cu-join-heading {
+    width: 100%;
+    font-size: 24px;
+    height: auto;
+    line-height: 1.4;
+    text-align: center;
+  }
+
+  .cu-get-involved-btn {
+    margin-top: 16px;
+    align-self: center;
+    padding: 10px 20px 10px 40px;
+  }
+
+  .cu-join-image {
+    width: 100%;
+    text-align: center;
+  }
+
+  .cu-join-image img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: contain;
+  }
+
+  .cu-faq-title {
+    font-size: 32px;
+    height: auto;
+    margin-top: 60px;
+  }
+
+  .cu-faq-subtitle {
+    width: 100%;
+    font-size: 16px;
+    height: auto;
+    margin-bottom: 60px;
+    padding: 0 10px;
+  }
+
+  .cu-faq-section {
+    padding: 40px 16px;
+  }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+  .cu-hero {
+    flex-direction: row;
+    height: 922px;
+  }
+
+  .cu-hero-left {
+    width: 50%;
+    height: 100%;
+  }
+
+  .cu-hero-left img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .cu-hero-right {
+    width: 50%;
+    background-color: #f9f9f9;
+    padding: 40px;
+    box-sizing: border-box;
+  }
+
+  .cu-form-wrapper {
+    position: static;
+    margin: 0;
+    padding: 0;
+    gap: 24px;
+  }
+
+  .cu-form-wrapper h2,
+  .cu-form-wrapper span,
+  .cu-form-wrapper p {
+    width: 100%;
+    font-size: 32px;
+  }
+
+  .cu-form-wrapper span {
+    font-size: 32px;
+    margin-top: -20px;
+  }
+
+  .cu-form-wrapper p {
+    font-size: 16px;
+    margin-top: -15px;
+  }
+
+  .cu-form {
+    width: 100%;
+    gap: 24px;
+    height: auto;
+  }
+
+  .cu-form input,
+  .cu-form textarea {
+    width: 100%;
+  }
+
+  .cu-form button {
+    width: 70%;
+    margin: 32px auto 0 auto;
+    display: block;
+  }
+
+  /* Two Cards per Row for Contact Cards */
+  .cu-card-container {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 32px;
+    margin-bottom: 60px;
+  }
+
+  .cu-card {
+    width: calc(50% - 16px); /* Two cards per row with some spacing */
+    max-width: 300px;
+  }
+
+  /* Join Card Adjustments */
+  .cu-join-card {
+    width: 80%;
+    height: auto;
+    padding: 40px;
+    border-radius: 24px;
+    display: flex;
+    justify-content: space-between;
+    gap: 32px;
+    margin: 32px auto;
+  }
+
+  .cu-join-text {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .cu-join-heading {
+    font-size: 32px;
+    line-height: 1.4;
+  }
+
+  .cu-get-involved-btn {
+    margin-top: 16px;
+    align-self: flex-start;
+    padding: 10px 20px 10px 40px;
+  }
+
+  .cu-join-image {
+    width: 40%;
+    text-align: center;
+  }
+
+  .cu-join-image img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+  }
+
+  .cu-faq-title {
+    font-size: 32px;
+    height: auto;
+    margin-top: 60px;
+  }
+
+  .cu-faq-subtitle {
+    font-size: 16px;
+    height: auto;
+    margin-bottom: 60px;
+  }
+
+  .cu-faq-section {
+    padding: 40px 16px;
+  }
+}

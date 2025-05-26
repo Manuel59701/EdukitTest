@@ -1,42 +1,33 @@
 import React from "react";
-import ErrorIcon from "../../assets/error-icon.png";
-import "../ResetPassword/ResetPassword.css"; // You can move styles to a separate ErrorScreen.css if needed
+import HeadIcon from "../../assets/head-icon.png";
 
-const ErrorScreen = ({
+const OtpModal = ({
+  show,
   otp,
-  setOtp,
-  inputRefs,
   handleChange,
   handleKeyDown,
-  onClose,
-  onSubmit,
+  inputRefs,
+  handleOtpSubmit,
 }) => {
+  if (!show) return null;
+
   return (
     <div className="popup-overlay">
       <div className="popup-modal">
-        <div className="error-icon">
-          <img src={ErrorIcon} alt="Error" />
+        <div className="head-icon">
+          <img src={HeadIcon} alt="Head" />
         </div>
-        <h3
-          className="head-text"
-          style={{ textAlign: "center", marginBottom: "24px" }}
-        >
-          Reset Password
-        </h3>
-        <p
-          className="head-body"
-          style={{ textAlign: "center", marginBottom: "32px" }}
-        >
+        <h3 className="head-text">Reset Password</h3>
+        <p className="head-body">
           We've sent a code to <b>+234 123 456 7890</b>
         </p>
-
         <div className="otp-input-group">
           {otp.map((data, index) => (
             <input
               key={index}
+              placeholder="0"
               type="text"
               maxLength="1"
-              placeholder="0"
               className="otp-input-box"
               value={data}
               onChange={(e) => handleChange(e.target, index)}
@@ -45,12 +36,10 @@ const ErrorScreen = ({
             />
           ))}
         </div>
-
         <div className="rpwd-footer">
-          Didn't get a code? <a href="resend">Click to resend.</a>
+          Didn’t get a code? <a href="/resend">Click to resend.</a>
         </div>
-
-        <button className="otp-submit-btn" onClick={onSubmit}>
+        <button className="otp-submit-btn" onClick={handleOtpSubmit}>
           Reset Password
         </button>
       </div>
@@ -58,4 +47,4 @@ const ErrorScreen = ({
   );
 };
 
-export default ErrorScreen;
+export default OtpModal;

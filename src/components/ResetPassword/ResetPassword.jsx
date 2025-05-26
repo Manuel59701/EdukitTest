@@ -1,11 +1,9 @@
 import React, { useState, useRef } from "react";
 import GoogleIcon from "../../assets/Google icon.png";
-import HeadIcon from "../../assets/head-icon.png";
-import ErrorIcon from "../../assets/error-icon.png"; // Add your error icon image
-import SuccessIcon from "../../assets/success-icon.png";
-import FinalSuccessIcon from "../../assets/final-success-icon.png";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import OtpModal from "../Modals/OtpModal";
+import ErrorModal from "../Modals/ErrorModal";
+import SuccessModal from "../Modals/SuccessModal";
+import FinalSuccessModal from "../Modals/FinalSuccessModal";
 import "./ResetPassword.css";
 
 const ResetPassword = () => {
@@ -124,213 +122,46 @@ const ResetPassword = () => {
         </form>
       </div>
 
-      {/* ✅ OTP Modal */}
-      {showPopup && (
-        <div className="popup-overlay">
-          <div className="popup-modal">
-            <div className="head-icon">
-              <img src={HeadIcon} alt="Head" />
-            </div>
-            <h3 className="head-text">Reset Password</h3>
-            <p className="head-body">
-              We've sent a code to <b>+234 123 456 7890</b>
-            </p>
+      <>
+        <OtpModal
+          show={showPopup}
+          otp={otp}
+          handleChange={handleChange}
+          handleKeyDown={handleKeyDown}
+          inputRefs={inputRefs}
+          handleOtpSubmit={handleOtpSubmit}
+        />
 
-            <div className="otp-input-group">
-              {otp.map((data, index) => (
-                <input
-                  placeholder="0"
-                  key={index}
-                  type="text"
-                  maxLength="1"
-                  className="otp-input-box"
-                  value={otp[index]}
-                  onChange={(e) => handleChange(e.target, index)}
-                  onKeyDown={(e) => handleKeyDown(e, index)}
-                  ref={(el) => (inputRefs.current[index] = el)}
-                />
-              ))}
-            </div>
+        <ErrorModal
+          show={showErrorModal}
+          otp={otp}
+          setShowErrorModal={setShowErrorModal}
+          handleRetry={handleRetry}
+        />
 
-            <div className="rpwd-footer">
-              Didn’t get a code? <a href="/resend">Click to resend.</a>
-            </div>
+        <SuccessModal
+          show={showSuccessModal}
+          newPassword={newPassword}
+          confirmPassword={confirmPassword}
+          setNewPassword={setNewPassword}
+          setConfirmPassword={setConfirmPassword}
+          setPasswordMismatch={setPasswordMismatch}
+          passwordMismatch={passwordMismatch}
+          isPasswordValid={isPasswordValid}
+          setShowSuccessModal={setShowSuccessModal}
+          handleFinalSuccess={handleFinalSuccess}
+          showNewPassword={showNewPassword}
+          showConfirmPassword={showConfirmPassword}
+          setShowNewPassword={setShowNewPassword}
+          setShowConfirmPassword={setShowConfirmPassword}
+          getPasswordErrorMessage={getPasswordErrorMessage}
+        />
 
-            <button className="otp-submit-btn" onClick={handleOtpSubmit}>
-              Reset Password
-            </button>
-          </div>
-        </div>
-      )}
-
-      {/* Error Modal */}
-      {showErrorModal && (
-        <div className="popup-overlay">
-          <div className="popup-modal">
-            <div className="error-icon-wrapper">
-              <img src={ErrorIcon} alt="Error" className="error-icon" />
-            </div>
-
-            <h3 className="error-text">Email Verification</h3>
-
-            <div className="otp-error-group">
-              {otp.map((data, index) => (
-                <input
-                  key={index}
-                  type="text"
-                  className="otp-error-box"
-                  value={data}
-                  readOnly
-                />
-              ))}
-            </div>
-
-            <p className="error-body">There was an error with the code</p>
-
-            <div className="error-btn-group">
-              <button
-                className="error-back-btn"
-                onClick={() => setShowErrorModal(false)}
-              >
-                Back
-              </button>
-              <button className="resend-btn" onClick={handleRetry}>
-                Resend Code
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Success Modal */}
-      {showSuccessModal && (
-        <div className="popup-overlay">
-          <div className="success-modal">
-            <div className="success-icon">
-              <img src={SuccessIcon} alt="Success" />
-            </div>
-            <h3 className="success-title">Create your new password</h3>
-            <div className="success-body">
-              Enter your new password to change
-            </div>
-
-            <div className="success-input-wrapper">
-              <label htmlFor="new-password" className="input-label">
-                New Password
-              </label>
-              <div className="password-input-group">
-                <FontAwesomeIcon
-                  icon={showNewPassword ? faEye : faEyeSlash}
-                  className="password-toggle-icon-left"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    setShowNewPassword(!showNewPassword);
-                  }}
-                  role="button"
-                  aria-label="Toggle password visibility"
-                />
-                <input
-                  type={showNewPassword ? "text" : "password"}
-                  id="new-password"
-                  className="success-input with-icon-left"
-                  placeholder="Enter new password"
-                  value={newPassword}
-                  onChange={(e) => {
-                    const value = e.target.value;
-                    setNewPassword(value);
-                    setPasswordMismatch(
-                      confirmPassword && value !== confirmPassword
-                    );
-                  }}
-                />
-              </div>
-
-              <p className="input-instruction">Must be at least 8 characters</p>
-            </div>
-
-            <div className="success-input-wrapper">
-              <label htmlFor="confirm-password" className="input-label">
-                Confirm Password
-              </label>
-              <div className="password-input-group">
-                <FontAwesomeIcon
-                  icon={showConfirmPassword ? faEye : faEyeSlash}
-                  className="password-toggle-icon-left"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    setShowConfirmPassword(!showConfirmPassword);
-                  }}
-                  role="button"
-                  aria-label="Toggle confirm password visibility"
-                />
-                <input
-                  type={showConfirmPassword ? "text" : "password"}
-                  id="confirm-password"
-                  className="success-input with-icon-left"
-                  placeholder="Re-enter new password"
-                  value={confirmPassword}
-                  onChange={(e) => {
-                    const value = e.target.value;
-                    setConfirmPassword(value);
-                    setPasswordMismatch(newPassword && value !== newPassword);
-                  }}
-                />
-              </div>
-
-              {/* 🔁 Replacing the instruction dynamically */}
-              <p
-                className="input-instruction"
-                style={{
-                  color: passwordMismatch ? "red" : "#666",
-                  fontSize: "14px",
-                }}
-              >
-                {getPasswordErrorMessage()}
-              </p>
-            </div>
-
-            <div className="success-btn-group">
-              <button
-                className="back-btn"
-                onClick={() => setShowSuccessModal(false)}
-              >
-                Cancel
-              </button>
-              <button
-                className="reset-btn"
-                disabled={!isPasswordValid}
-                onClick={handleFinalSuccess}
-              >
-                Reset Password
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Final Success Modal */}
-      {showFinalSuccessModal && (
-        <div className="final-success-modal-overlay">
-          <div className="final-success-modal">
-            <div className="final-success-icon">
-              <img src={FinalSuccessIcon} alt="FinalSuccess" />
-            </div>
-            <h3>Password Reset Successful</h3>
-            <p>
-              Your password has been successfully updated. You can now log in
-              with your new password.
-            </p>
-            <a href="/Login">
-              <button
-                className="final-success-login-btn"
-                onClick={handleLoginRedirect}
-              >
-                Login
-              </button>
-            </a>
-          </div>
-        </div>
-      )}
+        <FinalSuccessModal
+          show={showFinalSuccessModal}
+          handleLoginRedirect={handleLoginRedirect}
+        />
+      </>
     </div>
   );
 };

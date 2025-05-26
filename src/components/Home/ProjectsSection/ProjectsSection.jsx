@@ -104,7 +104,7 @@ const ProjectsSection = () => {
         <button className="project-buttons">See More Projects</button>
       </div>
 
-      <div className="project-container">
+      <div className="project-container three-cards">
         {displayedProjects.map((project) => (
           <div key={project.id} className="projects-cards">
             <img

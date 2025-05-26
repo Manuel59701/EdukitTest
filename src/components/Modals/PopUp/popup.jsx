@@ -1,7 +1,7 @@
 import React from "react";
 import "./popup.css";
-import UploadIcon from "../../assets/upload-icon.png"; // Replace with your icon path
-import TopImage from "../../assets/popup-image.png"; // Optional top image
+import UploadIcon from "../../../assets/upload-icon.png"; // Replace with your icon path
+import TopImage from "../../../assets/popup-image.png"; // Optional top image
 
 const Popup = ({ onClose }) => {
   return (

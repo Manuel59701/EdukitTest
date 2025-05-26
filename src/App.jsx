@@ -1,6 +1,7 @@
 import React from "react";
 import Home from "./Pages/Home";
 import OurProfile from "./Pages/OurProfile";
+import SignUp from "./components/Signup/Signup.jsx";
 import {
   BrowserRouter as Router,
   Route,
@@ -9,7 +10,7 @@ import {
 } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import Student from "./components/Student/Student.jsx";
-import Signup from "./components/SignUp/Signup.jsx";
+
 import NewUser from "./components/NewUser/NewUser.jsx";
 import School from "./components/School/School.jsx";
 import Login from "./components/Login/Login.jsx"; // Import the Login component
@@ -17,7 +18,6 @@ import OurStory from "./Pages/OurStory.jsx";
 import Blog from "./Pages/Blog.jsx";
 import OurTeam from "./components/OurTeam/OurTeam"; // Update the import path
 import ResetPassword from "./components/ResetPassword/ResetPassword";
-import ErrorScreen from "./components/ErrorScreen/errorscreen.jsx";
 import ContactUsPage from "./Pages/ContactUsPage.jsx";
 
 const App = () => {
@@ -44,8 +44,8 @@ const App = () => {
           <Route exact path="/Blog">
             <Blog />
           </Route>
-          <Route exact path="/Signup">
-            <Signup />
+          <Route exact path="/SignUp">
+            <SignUp />
           </Route>
           <Route exact path="/Student">
             <Student />
@@ -64,9 +64,6 @@ const App = () => {
           </Route>
           <Route exact path="/ResetPassword">
             <ResetPassword />
-          </Route>
-          <Route exact path="/ErrorScreen">
-            <ErrorScreen />
           </Route>
           <Route exact path="/ContactUsPage">
             <ContactUsPage />

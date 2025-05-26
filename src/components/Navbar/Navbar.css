@@ -240,15 +240,22 @@
 
 .log-in:hover {
   background-color: #535862;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 /* RESPONSIVE NAVBAR */
+
+/* Responsive Navbar for screens up to 768px */
 @media screen and (max-width: 768px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
   .NavItems {
     position: fixed;
     top: 0;
-    right: -100%;
+    right: -250px; /* Match the sidebar width to avoid overflow */
     width: 250px;
     height: 100vh;
     background-color: #ffffff;
@@ -256,6 +263,9 @@
     justify-content: flex-start;
     padding-top: 60px;
     transition: right 0.3s ease-in-out;
+    z-index: 1000;
+    overflow-y: auto;
+    overflow-x: hidden;
   }
 
   .NavItems.active {
@@ -272,16 +282,10 @@
     display: block;
     font-size: 24px;
     cursor: pointer;
-    z-index: 10000;
-    position: fixed;
-    right: 20px;
-    top: 20px;
-  }
-
-  .NavItems.active .MenuIcon {
     position: absolute;
     right: 20px;
     top: 20px;
+    z-index: 10000;
     color: #535862;
   }
 
@@ -291,6 +295,7 @@
     gap: 10px;
     margin-top: 20px;
     align-items: center;
+    overflow-y: auto;
   }
 }
 

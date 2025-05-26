@@ -7,7 +7,7 @@ import {
   faEyeSlash,
   faQuestionCircle,
 } from "@fortawesome/free-solid-svg-icons";
-import Popup from "../PopUp/popup";
+import Popup from "../Modals/PopUp/popup";
 
 const Student = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -47,6 +47,7 @@ const Student = () => {
               <h2>Create Account</h2>
               <p>Please fill in the correct details to get started</p>
             </div>
+
             <form onSubmit={handleCreateAccount}>
               <div className="student-input-group">
                 <div className="student-input-wrapper">
@@ -108,14 +109,12 @@ const Student = () => {
                   />
                 </div>
               </div>
-
               <div className="student-checkbox">
                 <input type="checkbox" id="terms" />
                 <label htmlFor="terms">
                   You agree to our <a href="/privacy policy">Privacy Policy</a>.
                 </label>
               </div>
-
               <button type="submit" className="student-primary-btn">
                 Create Account
               </button>
@@ -127,7 +126,6 @@ const Student = () => {
                 />{" "}
                 Sign up with Google
               </button>
-
               <p className="student-footer">
                 Already have an account? <a href="/Login">Log in</a>
               </p>
