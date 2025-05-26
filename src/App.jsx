@@ -1,7 +1,7 @@
 import React from "react";
 import Home from "./Pages/Home";
 import OurProfile from "./Pages/OurProfile";
-import SignUp from "./components/Signup/Signup.jsx";
+import SignUp from "./components/SignUp/SignUp.jsx";
 import {
   BrowserRouter as Router,
   Route,
